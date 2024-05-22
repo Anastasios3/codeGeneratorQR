@@ -28,7 +28,7 @@ Ensure you have the following software installed on your system:
    Clone the repository from GitHub:
 
    ```sh
-   git clone https://github.com/yourusername/qr-code-generator.git
+   git clone https://github.com/Anastasios3/codeGeneratorQR
    cd qr-code-generator
    ```
 
@@ -94,7 +94,7 @@ Contributions are welcome! Please fork the repository and create a pull request 
 
 ## Authors
 
-- **Your Name** - *Initial work* - [yourusername](https://github.com/yourusername)
+- Anastasios Tatarakis - Larentzos - *Initial work* - [yourusername](https://github.com/Anastasios3)
 
 ## Acknowledgments
 
