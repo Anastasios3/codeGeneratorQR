@@ -29,7 +29,7 @@ Ensure you have the following software installed on your system:
 
    ```sh
    git clone https://github.com/Anastasios3/codeGeneratorQR
-   cd qr-code-generator
+   cd codeGeneratorQR
    ```
 
 2. **Install Dependencies**
