@@ -1,0 +1,36 @@
+# QR Code Generator
+
+This is a simple web application that allows users to generate QR codes.
+
+## Features
+
+- Generate QR codes from any URL.
+- Customize the color of the QR code.
+- Customize the size of the QR code.
+- Choose the error correction level for the QR code.
+- Download the generated QR code as a PNG or SVG file.
+
+## How to Use
+
+1. Enter the URL that you want to generate a QR code for in the "Enter URL" input field.
+2. Choose the color of the QR code by selecting a color from the color picker.
+3. Enter the size of the QR code in the "QR Size" input field.
+4. Choose the error correction level for the QR code from the "Error Correction Level" dropdown.
+5. Click on the "Generate QR Code" button to generate the QR code.
+6. The generated QR code will be displayed below the form. You can download it as a PNG or SVG file by clicking on the corresponding download link.
+
+## Installation
+
+1. Clone this repository: `git clone https://github.com/yourusername/qr-code-generator.git`
+2. Navigate to the project directory: `cd qr-code-generator`
+3. Install the dependencies: `npm install`
+4. Start the server: `npm start`
+5. Open your web browser and navigate to `http://localhost:3000` to use the application.
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
