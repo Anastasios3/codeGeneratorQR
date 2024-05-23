@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5.5.3/dist/iro.min.js"></script>
+    <title>QR Code Generator</title>
+    <style>
+      #colorPicker {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>QR Code Generator</h1>
+      <form id="qrForm" action="/generate" method="POST">
+        <label for="url">Enter URL:</label>
+        <input type="text" id="url" name="url" required />
+
+        <label for="colorPicker">QR Color:</label>
+        <div id="colorPicker"></div>
+        <input type="hidden" id="color" name="color" value="#000000" />
+
+        <label for="size">QR Size:</label>
+        <input type="number" id="size" name="size" value="10" />
+
+        <label for="errorCorrection">Error Correction Level:</label>
+        <select id="errorCorrection" name="errorCorrection">
+          <option value="L">L</option>
+          <option value="M">M</option>
+          <option value="Q">Q</option>
+          <option value="H">H</option>
+        </select>
+
+        <button type="submit">Generate QR Code</button>
+      </form>
+
+      <% if (qrCode) { %>
+      <h2>Your QR Code:</h2>
+      <img id="qrImage" src="<%= qrCode %>" alt="QR Code" />
+      <div class="download-links">
+        <a href="<%= qrCode %>" download="qr-code.png">Download PNG</a>
+        <a
+          href="data:image/svg+xml;base64,<%= Buffer.from(qrSVG).toString('base64') %>"
+          download="qr-code.svg"
+          >Download SVG</a
+        >
+      </div>
+      <% } %>
+    </div>
+
+    <script>
+      const colorPicker = new iro.ColorPicker("#colorPicker", {
+        width: 200,
+        color: "#000000",
+      });
+
+      colorPicker.on("color:change", function (color) {
+        document.getElementById("color").value = color.hexString;
+      });
+
+      document
+        .getElementById("qrForm")
+        .addEventListener("submit", function (event) {
+          document.getElementById("color").value = colorPicker.color.hexString;
+        });
+    </script>
+  </body>
+</html>
